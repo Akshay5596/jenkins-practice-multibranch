@@ -1,42 +1,7 @@
-pipeline {
-
-		agent any
-		
-		stages {
-		
-			stage ("Stage-1"){
-			
-				steps {
-				
-				    echo "Hello World"
-				
-				}
-			
-			}
-			
-			stage ("Stage-2"){
-			
-				steps {
-				
-				    echo "Hello World two"
-				
-				}
-			
-			}
-			
-			stage ("Stage-3"){
-			
-				steps {
-				
-				    echo "Hello World three"
-				
-				}
-			
-			}
-		
-		
-		}
-
-
-
+node {
+    stage('Test Stage') {
+        some_var = 'Hello World' // this is Groovy
+        echo some_var // printing via Groovy works
+        sh 'echo $some_var' // printing in shell does not work
+    }
 }
